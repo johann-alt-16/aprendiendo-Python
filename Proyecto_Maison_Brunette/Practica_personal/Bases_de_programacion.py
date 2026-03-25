@@ -4,7 +4,7 @@
 # git push
 #Bienvenida a la app
 print("Hola estas listo para ver tu mejor version?")
-respuesta_del_usuario= input("Responde con Si o No: "):
+respuesta_del_usuario= input("Responde con Si o No: ")
 while respuesta_del_usuario =="Si" or respuesta_del_usuario=="No":
   respuesta_del_usuario= input("Responde con Si o No: ")
   if respuesta_del_usuario=="Si":
@@ -14,7 +14,7 @@ while respuesta_del_usuario =="Si" or respuesta_del_usuario=="No":
       break
 #almacenar los parametros de las condiciones
       color_a_utilizar= input("Dime que colores te gustaria llevar hoy: (Azul, Rojo, Negro) ")
-      convertir_a_cap= color_a_utilizar.capitalize()
+      color_a_utilizar= color_a_utilizar.capitalize()
       tipo_de_cuerpo= input("¿Cuál es tu tipo de cuerpo? (mesomorfo, endomorfo, ectomorfo): ")
       convertir_tipo_de_cuerpo= tipo_de_cuerpo.lower()
       Evento= input("¿A qué evento asistirás hoy? (formal, casual, deportivo): ")
@@ -32,4 +32,3 @@ while respuesta_del_usuario =="Si" or respuesta_del_usuario=="No":
 
       else:
         print("Lo siento, no tengo una recomendación para esa combinación de características.")
- 
