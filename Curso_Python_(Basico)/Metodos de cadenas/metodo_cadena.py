@@ -17,4 +17,4 @@ primera_letra = cadena1.capitalize()
 
 
 #quinto metodo find busca una cadena en otra cadena dando resultado su posicion ej,1,2,3
-devolver
+devolver= "J"
