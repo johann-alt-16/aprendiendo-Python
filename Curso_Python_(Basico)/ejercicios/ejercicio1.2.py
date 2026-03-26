@@ -13,7 +13,7 @@ if resultado >2000 and resultado_de_meta >1900:
     print ('Wow johan tienes suficientes pantalones para vestir a un pais entero')
 
 elif resultado>=1500 and resultado_de_meta >= 1400:
-    print (f"No te preocupes socio aunque tu meta halla fallado aun te quedan {resultado_de_meta} pantalones para vender ¡Animoo!")
+    print (f"No te preocupes socio aunque tu meta haya fallado aun te quedan {resultado_de_meta} pantalones para vender ¡Animoo!")
 
 elif resultado >=23 and resultado_de_meta >=1:
      print (f"No te preocupes socio aunque tu meta haya fallado aun te queda {resultado_de_meta} pantalones para vender ¡Animoo!")
