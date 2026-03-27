@@ -1,0 +1,55 @@
+--------------------------------------------------------CHECKLIST MVP-----------------------------------------------------
+# lo que podemos hacer gratis, con el objetivo de mantener la exclusividad del producto final, tendra escaneo QR de tiendas afiliadas a la app
+para agregar automaticamente al closet virtual, asi como tambien te permitira ver que prendas en tiendas cercanas te quedaran bien.
+
+En la parte de lo  que es el nivel del codigo:
+1. Modulo de bienvenida: Que la app pueda pedir el nombre del usuario y salude con clase.
+
+2. Personalizacion: Que cada persona tenga a un compañero propio segun sus caracteristicas:
+   -Test de Colorimetria: Un cuestionario simple, para saber su subtono (Frio, Calido o Neutro).
+   -Peso y Altura: Aqui el usuario nos dice su estatura y peso para preparar los mejores estilos segun su fisico.
+   -Tipo de cuerpo: Mediante imagenes que el usuario seleccione la que mas se parezca a el.
+   -Contextura(ADN): Aqui le pedimos al usuario tambien por imagenes si es Mesomorfo, Ectomorfo o Endomorfo.
+
+3. Enseñar a vestir: No solo combinaremos su ropa si no que se le enseña como vestir respetando la regla de las
+proporciones.
+
+4.Logica de personalidad (introvertido o extrovertido): Se filtran los colores segun su personalidad sin perder la belleza.
+
+5. Modo animo: Preguntas como ¿Como estas hoy? y sugerir colores de acuerdo a su estado de animo.
+
+6. El explicador: Se trata de un mensaje a que el usuario pueda acceder para saber porque se le recomienda dicho color,
+tipo de ouffit, si el pantalon es arriba o abajo etc...
+
+7. Historia: Una lista que recuerde que estilos le gusta y actuar de acorde a sus gustos.
+
+8. Objetivo de la vestimenta: Se orienta a que tipo de situacion se enfrenta o el clima q hay ese dia, ejp: Trabajo, Deportivo,
+Casual, si hay Calor, Frio etc...
+
+9. Ciclo horario: Que el codigo detecte si es de dia o noche y cambiar las tonalidades de la app.
+
+10. Macht en pareja: La app te pide los colores de vestimenta de tu pareja y te crea un ouffit que no te opaque ni a ti ni a el.
+
+11. Macht Grupal: El usuario elige cuantas personas ahi en el grupo y la app comparte o prepara sus ouffit para combinar o nadie repita.
+
+12. IDs: Esto es para una mejor sincronizacion de vestuario del grupo o parejas para que la app realize sus vestuarios segun  sus especificaciones.
+
+13. Chat: Se creara un chat en el que solo puedan escribirse las personas que compartan IDs para mayor privacidad... El objetivo es elegir el ouffit del dia.
+
+14. Scroll infinito: Asi como tik tok pero con filtros que solo te lleguen videos de personas con tus mismas caracteristicas para que puedas tener sus ouffits.
+
+15. Grupo de parejas: Funcionara con la finalidad de elegir ouffut en grupo de parejas. Tambien con un modo para destacar al soltero.
+
+16. Armario virtual: Es donde se almacenaran sus prendas.
+
+En la parte del Diseño y Estudio:
+1. Figma: Diseñar las pantallas con estilo minimalista con colores como el Negro o Vinotinto.
+
+2. Google Fonts: Elegir las letras que den esa sensacion "Premium".
+
+3. Estudio de campo: Investigar en PDFs sobre psicologia del color y telas frescas para el calor o frio.
+
+4. Marketing: Analizar TikkToks de marcas de lujo para copiar su estetica visual.
+
+5. Muro de seguridad: Reglas de respeto y elegancia.
+

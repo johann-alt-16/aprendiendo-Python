@@ -1,0 +1,21 @@
+----------------------------------------------------VISION FINAL DE BRUNETTE-------------------------------------------------
+# Esto es lo que se planea entregar en un futuro no tan lejano.
+
+La app no solo trabajara como un robot si no como un estilista profesional, es decir nada de botones o eleccion del usuario manual
+sino que el usuario pueda compartir en un chat o un audio como se siente que quiere y para donde va.
+
+1. El handshake: Es una modalidad que permite a los usuarios compartir sus ouffit o crear ouffit grupales solo chocando sus telefonos
+mediante el bluetooth y el compartimiento de IDs.
+
+2. IA visual: Funcionara para detectar prendas en segundos mediante un video corto de su armario fisico para agregarlo al armario virtual.
+
+3. Complices IA (Hombre/Mujer): Chat con perzonalidades distintas para asesoria constante.
+
+4. Calculadora Bio-Metrica: Escaneo de silueta para dar tallas exactas sin cinta metrica.
+
+5. Maison Brunette Gold: Ya seremos una empresa de ropa orientada en estetica japonesa con cajas personalizadas, logistica de envio, unboxing exclusivo.
+
+6. Ecosistema unificado: Una sola cuenta para pagos, ropa y envios de tiendas terceras.
+
+
+
