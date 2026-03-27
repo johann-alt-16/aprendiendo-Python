@@ -1,25 +1,34 @@
 #Probando codigo
 
-def colores( ):
-   eleccion_de_usuario=input('que color quieres maestro?: ').lower()
-   colores_disponibles= ['negro', 'azul', 'verde']
+#Herramientas
+perfil_bajo= 1
+perfil_estandar=2
+perfil_alto= 3
 
-    
-    
+#Enseñando a usar las herramientas
+def perfil(eleccion):
 
-   if eleccion_de_usuario in colores_disponibles:
-      print(f"¡ufff que buen gusto compa! ese {eleccion_de_usuario} te quedara guapisimoo")
+   if perfil_bajo==eleccion:
+    print("Te hare lucir espectacular sin sobresalir, confia en mi socio")
+
+   elif perfil_estandar== eleccion:
+    print ("Te preparas para lo comodo, que buena eleccion")  
+
+   elif perfil_alto== eleccion:
+    print ("Ohhh veo que alguien quiere ser el alma de la fiesta, confia en mi yo me encargo de la ropa")
 
    else:
-        print(f"Lo siento wey el color {eleccion_de_usuario} no lo tenemos disponible")
+    print ("Lo lamento pero solo tenemos los niveles 1, 2 y 3")
 
+#Encendiendo el motor
+Contador_de_usos=0
 
-def pantalones ():
- Usuario= input(" Que pantalon quieres rey?: ").capitalize()
- Pantalones_Disponible=["De vestir", "Clasico", "Cargo"]
- 
- if Usuario in Pantalones_Disponible:
-    print(f"Ohhhh con un pantalon {Usuario} vas a ser el centro de atencion")
+while True:
+   eleccion= int(input("Que nivel te gustaria llevar hoy?:  "))
+   if eleccion==0:
+      print(f"Hoy has usado la app {Contador_de_usos} veces")
+      break
+   perfil(eleccion)
+   Contador_de_usos +=1
 
-colores()
-pantalones()
+print("Gracias por usar nuestra app ¡Vuelve pronto!")
