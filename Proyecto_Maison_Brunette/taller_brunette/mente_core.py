@@ -1,17 +1,25 @@
-#Se convoca las herramientas del corazon
-from corazon_core import ropa_caracteristica
-from corazon_core import ropa_caracteristica2
+
 #Se crea diccionario con el valor de luz que reflejan los colores
 VALOR_DE_BRILLO= {
     "negro": 0,
+    "petroleo": 1.5,
     "marino":2,
-    "cafe":3,
+    "cafe":2,
+    "vino": 2,
+    "oliva": 3,
     "gris":5,
     "azul":6,
     "verde":6,
+    "beige": 6,
+    "mostaza": 6,
+    "cian": 7,
     "rojo": 7,
     "naranja":8,
+    "lila": 8,
+    "arena": 8,
+    "rosa_pastel": 8,
     "amarillo":9,
+    "plata": 9.5,
     "blanco": 10
     }
 #Se le enseña que hacer con las herramientas
@@ -47,8 +55,9 @@ def genera_veredicto_final(prenda_superior, prenda_inferior):
 
     return f"Resultado visual: {mezcla} | Energia: {luz_total} /20\nConsejo:{mensaje}"
 
-prenda_superior = {"nombre": "camisa" , "color": "blanco"}
-prenda_inferior = {"nombre": "pantalon" , "color": "amarillo"}
+if __name__ == "__main__":
+  prenda_superior = {"nombre": "camisa" , "color": "lila"}
+  prenda_inferior = {"nombre": "pantalon" , "color": "petroleo"}
 
-resultado=genera_veredicto_final(prenda_superior , prenda_inferior)
-print(resultado)
+  resultado=genera_veredicto_final(prenda_superior , prenda_inferior)
+  print(resultado)
