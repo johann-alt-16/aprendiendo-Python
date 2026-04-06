@@ -22,7 +22,7 @@ VALOR_DE_BRILLO= {
     "plata": 9.5,
     "blanco": 10
     }
-#Se le enseña que hacer con las herramientas
+#Se crea una maquina con las intrucciones para la mezcla de colores.
 def resultado_de_mezcla(color1, color2):
 
     recetario_de_colores ={
@@ -38,6 +38,7 @@ def resultado_de_mezcla(color1, color2):
 #Solo comprimi el if/else para no ocupar mas espacio, no cambia absolutamente nada.
     return resultado  if resultado else "combinacion libre"
 
+#Se crea una maquina con la finalidad de verificar el nivel de brillo de las prendas a combinar
 def genera_veredicto_final(prenda_superior, prenda_inferior):
     color_sup= prenda_superior ["color"].lower()
     color_inf= prenda_inferior ["color"].lower()

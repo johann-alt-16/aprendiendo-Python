@@ -41,7 +41,7 @@ def registrar_ropa():
     else:
      print("Lo siento esa opcion no esta disponible")
      
-#MOSTRARR ROPA AGREGADAAAAAA
+#MOSTRARR ROPA AGREGADA.
  
     for estilo, lista_ropa in armario.items():
        if len(lista_ropa)>0:

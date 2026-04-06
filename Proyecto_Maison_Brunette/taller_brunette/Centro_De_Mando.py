@@ -10,7 +10,7 @@ def iniciar_maison_brunette():
 #SEE LLAma AL CORAZON
     registrar_ropa()
     proporcion= round(altura *100 /3, 1)
-    estilos={"1": "Slim fit", "2": "Regular fit" ,"3":"Relaxed fit", "4": "Structure fit"}
+    estilos ={"1": "Slim fit", "2": "Regular fit" ,"3":"Relaxed fit", "4": "Structure fit"}
     estilo_elegido = estilos.get(estilo_de_hoy, "Regular fit")
     
     if armario[estilo_elegido]:
@@ -27,4 +27,4 @@ def iniciar_maison_brunette():
        print(f"No hay nada en el estilo {estilo_elegido}")
 
 if __name__ =="__main__":
-   iniciar_maison_brunette()
+ iniciar_maison_brunette()
