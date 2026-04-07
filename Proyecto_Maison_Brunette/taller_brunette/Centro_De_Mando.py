@@ -1,30 +1,75 @@
 from bienvenida import obtener_datos_del_usuario
-from corazon_core import registrar_ropa, armario
-from mente_core import genera_veredicto_final
+import mente_logica
+import memoria_de_consejos
+import mente_visual_brillo
+import corazon_core
 
-def iniciar_maison_brunette():
-    print ("---BIENVENIDO A MAISON BRUNETTE---")
-#SE LLAMA A LA MENTE
-    nombre, altura, sexo, peso, estilo_de_hoy = obtener_datos_del_usuario()
-
-#SEE LLAma AL CORAZON
-    registrar_ropa()
-    proporcion= round(altura *100 /3, 1)
-    estilos ={"1": "Slim fit", "2": "Regular fit" ,"3":"Relaxed fit", "4": "Structure fit"}
-    estilo_elegido = estilos.get(estilo_de_hoy, "Regular fit")
+def lanzar_maison_brunette():
+    #0. Opcional 
     
-    if armario[estilo_elegido]:
-      prenda_final= armario[estilo_elegido][-1]
-      pantalon_negro= {"nombre": "Pantalon base", "color": "negro"}
 
-      veredicto= genera_veredicto_final(prenda_final, pantalon_negro)
+    #1. Entrada de datos
+    nom, alt, sex, pes, mun, est= obtener_datos_del_usuario()
 
-      print(f"\nOuffit: {prenda_final['nombre']} ({prenda_final['color']}) + Pantalon Negro")
-      print(veredicto)
-      print(f"Recuerda: que tu {prenda_final['nombre']} mida {proporcion}cm.")
+    #2. Proceso logico
+    val_imc, fit_tec, cat_hum = mente_logica.calcular_imc_y_estilo(pes,alt)
+    medida_hueso=mente_logica.calcular_medida_osea(mun, alt)
+    largo_prenda= mente_logica.calcular_proporcion_prenda(alt,est)
 
-    else:
-       print(f"No hay nada en el estilo {estilo_elegido}")
+    #Proceso visual y de armario
+    print("---REGISTRO DE PRENDAS---")
+    corazon_core.registrar_ropa()
+    corazon_core.registrar_ropa()
+    print(f"\n--- REVISANDO TU ARMARIO, {nom.upper()} ---")
+
+    estilos_nombres= {"1": "Slim fit", "2": "Regular fit", "3": "Relaxed fit", "4": "Structure fit"}
+    nombre_estilo= estilos_nombres.get(est)
+
+    lista_opciones= corazon_core.armario.get(nombre_estilo,[])
+
+    if len(lista_opciones) < 2:
+        print(f"Oye {nom} necesitas al menos dos prendas en tu seccion '{nombre_estilo}' para mezclar.")
+        return
+    
+    #seleccion real de prendas
+    for i, p in enumerate(lista_opciones):
+        print(f"{i}. {p['nombre']} ({p['color']})")
+    
+    id1= int(input("\nElige el numero de tu prenda superior: "))
+    id2= int(input("Elige el numero de tu prenda inferios: "))
+
+    prenda_sup= lista_opciones[id1]
+    prenda_inf= lista_opciones[id2]
+
+    #SE ejecuta el veredicto
+    veredicto_final = mente_visual_brillo.genera_veredicto_final(prenda_sup, prenda_inf)
+
+    #Entra en accion la bilioteca de consejos
+
+    saludo= memoria_de_consejos.bienvenida_al_informe(nom)
+    mensaje_estilo= memoria_de_consejos.obtener_mensaje_estilo(nom, est)
+    apoyo_fisico= memoria_de_consejos.dar_apoyo_segun_fisico(nom, cat_hum, alt)
+
+    #REPORTE FINaL
+    print("\n" + "*"*35)
+    print(f"      {saludo}")
+    print(" " + "*" *35)
+
+    print(f"\n RESULTADO VISUAL:")
+    print(veredicto_final)
+
+    print(f"\n TU ASESORIA PERSONAL:")
+    print(f"{mensaje_estilo}")
+    print(f"\n{apoyo_fisico}")
+
+    print("\n" + "-" * 45)
+    print(f" FICHA TECNICA:")
+    print(f" > Ajuste Sugerido: {val_imc}")
+    print(f" > Medida ósea: {medida_hueso}m")
+    print(f" > Largo de prenda: {largo_prenda}cm")
+    print("-" * 45)
+
+    print(f"\n¡Listo, {nom}! Ya puedes dormir como un master. ¡Maison Brunette la romperaaa!")
 
 if __name__ =="__main__":
- iniciar_maison_brunette()
+ lanzar_maison_brunette()

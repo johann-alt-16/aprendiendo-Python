@@ -47,7 +47,7 @@ def genera_veredicto_final(prenda_superior, prenda_inferior):
     mezcla= resultado_de_mezcla(color_sup , color_inf)
 
     if luz_total >= 16:
-        mensaje="¡MUYYY BRILLANTE , estas proyectando muchos colores"
+        mensaje="¡MUYYY BRILLANTE! Mejor probemos con otros colores."
     elif luz_total<= 4:
         mensaje= "Elegancia profunda..."
 
