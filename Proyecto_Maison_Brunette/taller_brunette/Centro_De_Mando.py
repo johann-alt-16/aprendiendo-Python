@@ -47,8 +47,8 @@ def lanzar_maison_brunette():
     #Entra en accion la bilioteca de consejos
 
     saludo= memoria_de_consejos.bienvenida_al_informe(nom)
-    mensaje_estilo= memoria_de_consejos.obtener_mensaje_estilo(nom, est)
-    apoyo_fisico= memoria_de_consejos.dar_apoyo_segun_fisico(nom, cat_hum, alt)
+    mensaje_estilo= memoria_de_consejos.obtener_mensaje_estilo(nom, est, cat_hum)
+    apoyo_fisico= memoria_de_consejos.dar_apoyo_segun_fisico(nom, est, cat_hum, alt)
 
     #REPORTE FINaL
     print("\n" + "*"*35)
