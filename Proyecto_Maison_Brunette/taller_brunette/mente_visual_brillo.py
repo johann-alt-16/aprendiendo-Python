@@ -2,8 +2,8 @@
 #Se crea diccionario con el valor de luz que reflejan los colores
 VALOR_DE_BRILLO= {
     "negro": 0,
-    "petroleo": 1.5,
-    "marino":2,
+    "verde azulado": 1.5,
+    "azul marino":2,
     "cafe":2,
     "vino": 2,
     "oliva": 3,
@@ -17,7 +17,7 @@ VALOR_DE_BRILLO= {
     "naranja":8,
     "lila": 8,
     "arena": 8,
-    "rosa_pastel": 8,
+    "rosa pastel": 8,
     "amarillo":9,
     "plata": 9.5,
     "blanco": 10

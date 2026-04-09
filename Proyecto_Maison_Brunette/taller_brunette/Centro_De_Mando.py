@@ -1,7 +1,10 @@
 from bienvenida import obtener_datos_del_usuario
+from cerebro_del_color import obtener_subtono_piel, verificar_prenda_usuario
 import mente_logica
 import memoria_de_consejos
+
 import mente_visual_brillo
+
 import corazon_core
 
 def lanzar_maison_brunette():
@@ -9,7 +12,9 @@ def lanzar_maison_brunette():
     
 
     #1. Entrada de datos
-    nom, alt, sex, pes, mun, est= obtener_datos_del_usuario()
+    nom, alt, sex, pes, color_ven, color_acc, mun, est= obtener_datos_del_usuario()
+    mensaje , color_sub= obtener_subtono_piel(nom, color_ven, color_acc)
+    print(f"\n{mensaje}")
 
     #2. Proceso logico
     val_imc, fit_tec, cat_hum = mente_logica.calcular_imc_y_estilo(pes,alt)
@@ -34,12 +39,25 @@ def lanzar_maison_brunette():
     #seleccion real de prendas
     for i, p in enumerate(lista_opciones):
         print(f"{i}. {p['nombre']} ({p['color']})")
-    
-    id1= int(input("\nElige el numero de tu prenda superior: "))
-    id2= int(input("Elige el numero de tu prenda inferios: "))
 
-    prenda_sup= lista_opciones[id1]
-    prenda_inf= lista_opciones[id2]
+    while True:
+     try:
+      id1= int(input("\nElige el numero de tu prenda superior: "))
+      id2= int(input("Elige el numero de tu prenda inferior: "))
+     except:
+        print("Por favor elige un numero, no esta permitido las letras.")
+        return lanzar_maison_brunette()
+     prenda_sup= lista_opciones[id1]
+     prenda_inf= lista_opciones[id2]
+     
+     _, _, opinion_estilo= verificar_prenda_usuario(nom, prenda_sup['color'], prenda_inf['color'],color_sub)
+     print(f"\n--- Brunette dice: ---")
+     print(opinion_estilo)
+     if "Mira" in opinion_estilo:
+        opcion = input("\n ¿Quieres intentar otra combinacion? (Si/No): ").lower()
+        if opcion == "si":
+           continue
+     break   
 
     #SE ejecuta el veredicto
     veredicto_final = mente_visual_brillo.genera_veredicto_final(prenda_sup, prenda_inf)

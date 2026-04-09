@@ -14,6 +14,7 @@ def obtener_datos_del_usuario():
 
  #Registro de identidad
  nombre= input("¿Con quien tengo el placer de hablar hoy?: ").strip().capitalize()
+ sexo= input("¿Tu perfil de estilo es Masculino o Femenino?: ").strip().capitalize()
  print(f"Perfecto, {nombre}. Comenzemos con tus dimensiones metricas.")
 
  #Datos antropometricos y reinicia si ahi error de escritura en cuanto a numeros.
@@ -24,7 +25,17 @@ def obtener_datos_del_usuario():
     print("\n[!] Por favor, usa numeros y puntos para las medidas (ej: 1,70 o 1.80).")
     return obtener_datos_del_usuario()
  
- sexo= input("¿Tu perfil de estilo es Masculino o Femenino?: ").strip().capitalize()
+ #Subtono de piel
+ print(f"Muy bien {nombre}, ahora verificaremos cual es tu subtono de piel.")
+ print("Esta prueba es para saber que colores son los que más te favorecen.")
+ print("De que color ves tus venas: A. Verdes |B. Azules  |C. Ambas")
+ color_vena=input(f"Y bien {nombre}, qué me dices?: ").strip().capitalize()
+ print(f"Perfecto {nombre}, ahora dime que color de accesorio prefieres.")
+ print("A. Dorado | B. Plateado | C. Ambos")
+ color_accesorio=input(f"Responde con seguridad {nombre}, de esto dependera la calidad de tus prendas: ").strip().capitalize()   
+ print(f"Listo {nombre}, ya tengo clarisimo cual es tu subtono de piel, continuemos con la personalizacion de la App.")
+
+ 
 
  #Evaluacion de estructura osea
  print("\n" + "-"*40)
@@ -55,4 +66,4 @@ def obtener_datos_del_usuario():
  print(" Iniciando ánalisis de proporciones en el sistema...")
  print(f"{'*'*50}\n")
 
- return nombre, altura, sexo, peso, opcion_muneca, estilo_de_hoy
+ return nombre, altura, sexo, peso,color_vena , color_accesorio, opcion_muneca, estilo_de_hoy
