@@ -1,0 +1,24 @@
+{
+    "Slim fit": [
+        {
+            "nombre": "camisa",
+            "color": "azul"
+        },
+        {
+            "nombre": "pantalon",
+            "color": "rojo"
+        }
+    ],
+    "Regular fit": [
+        {
+            "nombre": "camisa",
+            "color": "azul"
+        },
+        {
+            "nombre": "pantalon",
+            "color": "rojo"
+        }
+    ],
+    "Relaxed fit": [],
+    "Structure fit": []
+}

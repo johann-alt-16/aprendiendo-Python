@@ -7,7 +7,7 @@ def calcular_imc_y_estilo(peso,altura):
    recomendacion_fit = "Slim fit"
    categoria= "Delgada"
 
- elif 1.85 <= imc < 25:
+ elif 18.5 <= imc < 25:
    recomendacion_fit= "Regular fit"
    categoria= "Atletica"
 

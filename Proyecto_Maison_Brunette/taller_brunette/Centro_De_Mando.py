@@ -1,10 +1,9 @@
 from bienvenida import obtener_datos_del_usuario
 from cerebro_del_color import obtener_subtono_piel, verificar_prenda_usuario
 import mente_logica
-import memoria_de_consejos
-
+import biblioteca
 import mente_visual_brillo
-
+import gestion_de_memoria
 import corazon_core
 
 def lanzar_maison_brunette():
@@ -22,19 +21,20 @@ def lanzar_maison_brunette():
     largo_prenda= mente_logica.calcular_proporcion_prenda(alt,est)
 
     #Proceso visual y de armario
+    memoria_vieja= gestion_de_memoria.cargar_memoria_existente()
+    
     print("---REGISTRO DE PRENDAS---")
-    corazon_core.registrar_ropa()
-    corazon_core.registrar_ropa()
+     
+    armario_actualizado= corazon_core.registrar_ropa(memoria_vieja)
+    gestion_de_memoria.prendas_del_usuario(nom, armario_actualizado)
     print(f"\n--- REVISANDO TU ARMARIO, {nom.upper()} ---")
+    
 
     estilos_nombres= {"1": "Slim fit", "2": "Regular fit", "3": "Relaxed fit", "4": "Structure fit"}
     nombre_estilo= estilos_nombres.get(est)
 
-    lista_opciones= corazon_core.armario.get(nombre_estilo,[])
-
-    if len(lista_opciones) < 2:
-        print(f"Oye {nom} necesitas al menos dos prendas en tu seccion '{nombre_estilo}' para mezclar.")
-        return
+    lista_opciones=armario_actualizado.get(nombre_estilo,[])
+      
     
     #seleccion real de prendas
     for i, p in enumerate(lista_opciones):
@@ -64,9 +64,9 @@ def lanzar_maison_brunette():
 
     #Entra en accion la bilioteca de consejos
 
-    saludo= memoria_de_consejos.bienvenida_al_informe(nom)
-    mensaje_estilo= memoria_de_consejos.obtener_mensaje_estilo(nom, est, cat_hum)
-    apoyo_fisico= memoria_de_consejos.dar_apoyo_segun_fisico(nom, est, cat_hum, alt)
+    saludo= biblioteca.bienvenida_al_informe(nom)
+    mensaje_estilo= biblioteca.obtener_mensaje_estilo(nom, est, cat_hum)
+    apoyo_fisico= biblioteca.dar_apoyo_segun_fisico(nom, est, cat_hum, alt)
 
     #REPORTE FINaL
     print("\n" + "*"*35)
