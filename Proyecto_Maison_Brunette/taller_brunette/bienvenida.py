@@ -39,15 +39,22 @@ def obtener_datos_del_usuario():
 
  #Evaluacion de estructura osea
  print("\n" + "-"*40)
- print("    EVALUACION DE ESTRUCTURA ÓSEA     ")
+ print("    EVALUACION DE ESTRUCTURA ÓSEA Y TIPO DE CUERPO   ")
  print("-"*40)
  print("Esta prueba nos dirá de cómo se vé la ropa en tu cuerpo.")
  print("Rodea tu muñeca con tus dedos índice y pulgar:")
  print("    [A] Los dedos se sobreponen claramente (Estructura Fina)")
  print("    [B] Los dedos apenas logran tocarse (Estructura Media)")
  print("    [C] los dedos no llegan a encontrarse (Estructura Robusta)")
-
  opcion_muneca= input(f"\n¿Qué resultado obtuviste, {nombre}? (A/B/C): ").strip().capitalize()
+ print(f"Muy bien {nombre} ahora dime cual es tu tipo de cuerpo.")
+ #Tipo de cuerpo
+ print("    [A] Reloj de arena (X).")
+ print("    [B] Triangulo (A).")
+ print("    [C] Triangulo invertido (V).")
+ print("    [D] Rectangulo (H).")
+ print("    [D] Ovalado (0). ")
+ tipo_cuerpo= input("Podrias indicarme cual es tu tipo de cuerpo?: ")
 
 #Seleccion de nivel de estilo
  print ( "\n" + "-"*40 )
@@ -66,4 +73,4 @@ def obtener_datos_del_usuario():
  print(" Iniciando ánalisis de proporciones en el sistema...")
  print(f"{'*'*50}\n")
 
- return nombre, altura, sexo, peso,color_vena , color_accesorio, opcion_muneca, estilo_de_hoy
+ return nombre, altura, sexo, peso,color_vena , color_accesorio, opcion_muneca,tipo_cuerpo, estilo_de_hoy
