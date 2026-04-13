@@ -2,11 +2,11 @@ import math
 #Constante del cuerpo
 constantes={ 
   #Constantes promedio en hombres
-  "ancho_de_hombros_H": 0.228, 
-  "ancho_de_cadera_H": 0.191,
+  "ancho_de_hombros_H": 0.230, 
+  "ancho_de_cadera_H": 0.175,
   "ancho_cara_H": 0.088,
-  "ancho_cintura_H": 0.145,
-  "ancho_pecho_H": 0.205,
+  "ancho_cintura_H": 0.155,
+  "ancho_pecho_H": 0.195,
   "altura_pecho_H": 0.720,
   "altura_de_ojos_H": 0.936,
   "altura_del_hombro_H": 0.818,
@@ -16,11 +16,11 @@ constantes={
   "altura_rodilla_H": 0.285,
   
   #Constantes promedio en mujeres
-  "ancho_de_hombros_M": 0.212,
-  "ancho_de_cadera_M": 0.215,
+  "ancho_de_hombros_M": 0.215,
+  "ancho_de_cadera_M": 0.190,
   "ancho_cara_M": 0.085,
-  "ancho_cintura_M": 0.138,
-  "ancho_pecho_M": 0.198,
+  "ancho_cintura_M": 0.140,
+  "ancho_pecho_M": 0.185,
   "altura_pecho_M": 0.705,
   "altura_de_ojos_M": 0.930,
   "altura_del_hombro_M": 0.810,
@@ -32,34 +32,34 @@ constantes={
 
 usuario_silueta={
   "Reloj de arena":{
-    "hombros": 1.25, #Ligero enfasis
-    "pecho": 1.20,#enfasis en busto
+    "hombros": 1.05, #Ligero enfasis
+    "pecho": 1.02,#enfasis en busto
     "cintura": 0.85, #Cintura avispa
-    "cadera": 1.25 #Curva suave
+    "cadera": 1.05 #Curva suave
   },
   "Triangulo":{
-    "hombros": 0.90, #Hombros estrechos
+    "hombros": 0.92, #Hombros estrechos
     "pecho": 0.95,#torso superior mas bajo que el inferior
-    "cintura": 1.10, #Cintura estandar (Cómun)
-    "cadera": 1.45 #EL volumen mas notorio esta en esta zona
+    "cintura": 1.05, #Cintura estandar (Cómun)
+    "cadera": 1.15 #EL volumen mas notorio esta en esta zona
   },
   "Triangulo invertido":{
-    "hombros": 1.45, #Hombros anchos
-    "pecho": 1.35, #PEcho ancho y estetico
-    "cintura": 0.95, #CIntura que se reduce
+    "hombros": 1.12, #Hombros anchos
+    "pecho": 1.08, #PEcho ancho y estetico
+    "cintura": 0.92, #CIntura que se reduce
     "cadera": 0.90 # Cadera muy estrecha
   },
   "Rectangulo":{
-    "hombros": 1.15, #Todo alineado
-    "pecho": 1.10, #Alineacion perfcta
-    "cintura": 1.12, #Poca definicion de cintura
-    "cadera": 1.15 #Alineado con hombros
+    "hombros": 1.00, #Todo alineado
+    "pecho": 1.00, #Alineacion perfcta
+    "cintura": 1.00, #Poca definicion de cintura
+    "cadera": 1.00 #Alineado con hombros
   },
   "Ovalado":{
-    "hombros": 0.82, #Hombros redondeados
-    "pecho": 1.15, #volumen redondeado
-    "cintura": 1.45, #Volumen maximo en la zona abdominal
-    "cadera": 1.20 #Piernas suelen ser mas delgadas en proporcion a lo demas
+    "hombros": 0.95, #Hombros redondeados
+    "pecho": 1.05, #volumen redondeado
+    "cintura": 1.15, #Volumen maximo en la zona abdominal
+    "cadera": 1.00 #Piernas suelen ser mas delgadas en proporcion a lo demas
   }
 }
 
@@ -75,24 +75,24 @@ def calcular_imc_y_estilo(peso,altura):
  imc= peso / (altura**2)
 
  if imc < 18.5:
-   factor_relleno= 1.10
+   factor_relleno= 1.05
 
  elif 18.5<= imc <25 :
-   factor_relleno= 1.20
+   factor_relleno= 1.15
    
  elif 25<= imc <30:
-   factor_relleno= 1.32
+   factor_relleno= 1.25
 
  else:
-   factor_relleno= 1.45
+   factor_relleno= 1.35
 
  return factor_relleno
-
+"""SIrve para encontar tu tipo de somatipo"""
 def calcular_medida_osea(opcion):
    diccionario_de_medidas={
-      "A": 0.92, # Estructura pequeña
+      "A": 0.88, # Estructura pequeña
       "B": 1.00, # Estructura media
-      "C": 1.08 # Estructura grande
+      "C": 1.12 # Estructura grande
     }
    multiplicador= diccionario_de_medidas.get(opcion.upper(), 1.00)
    return multiplicador
@@ -207,4 +207,24 @@ def calcular_elipse_contorno(radio_total_HOM, radio_total_PE, radio_total_CIN, r
   print(perimetro_cadera)
   return perimetro_hombro, perimetro_pecho, perimetro_cintura, perimetro_cadera
 
-calcular_plano_transversal(1.80, constantes, "Femenino", 1.00, 1.20, usuario_silueta, "Reloj de arena")
+def calculo_ICC(cintura_final, cadera_final):
+ ICC = cintura_final/cadera_final
+ print(ICC)
+
+
+def calcular_proporcion_prenda(altura, estilo_elegido):
+
+  """ calcula el largo ideal de la prenda en centimetros"""
+  reglas_estilo={
+    "1": 0.38, 
+    "2": 0.40,
+    "3": 0.42,
+    "4": 0.45
+  }
+
+  porcentaje= reglas_estilo.get(estilo_elegido, 0.40)
+  largo_cm= (altura *100) * porcentaje
+  
+  return round(largo_cm, 1)
+calculo_ICC(66.20313847205836,126.21852031406245 )
+
