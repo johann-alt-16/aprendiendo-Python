@@ -9,7 +9,7 @@ color_accesorio={
         "C": "Ambos"
     }
 
-colores_para_el_usuario= {
+COLORES_POR_SUBTONO = {
         "Calido": ["mostaza", "naranja", "verde", "oliva", "cafe", "beige", "arena", "rojo", "amarillo"],
         "Frio": ["verde azulado", "azul marino", "azul", "cian", "lila", "rosa pastel", "plata", "vino"],
         "Neutro": ["negro", "gris", "arena", "blanco"]
@@ -19,32 +19,25 @@ colores_para_el_usuario= {
 #Funciones de piel y colorimetria.
 def obtener_subtono_piel(nombre, color_vena, color_accesorio ):
     if color_vena == "A" and color_accesorio== "A":
-        mensaje= f"Vaya {nombre}, tu subtono de piel es calido, asi que asegurate de tener ropa con tonos amarrilos o tierra."
+        mensaje= f"Vaya {nombre}, tu subtono de piel es cálido, así que asegúrate de tener ropa con tonos amarillos o tierra."
         color_subtono= "Calido"
     elif color_vena == "B" and color_accesorio== "B" :
-        mensaje=f"Muy bien {nombre} tu subtono de piel es frio, los tonos azules te quedaran como anillo al dedo."
+        mensaje=f"Muy bien {nombre}, tu subtono de piel es frío, los tonos azules te quedarán como anillo al dedo."
         color_subtono= "Frio"
     else:
-        mensaje= f"Ohh casi todos los colores te iran bien {nombre}, que suerte tienes, el subtono neutro es el mas vérsatil."
+        mensaje= f"Ohh casi todos los colores te irán bien {nombre}, ¡qué suerte tienes! El subtono neutro es el más versátil."
         color_subtono= "Neutro"
     return mensaje, color_subtono
 
-def color_favorecido():
-    colores_para_el_usuario={
-        "Calido": ["mostaza", "naranja", "verde", "oliva", "cafe", "beige", "arena", "rojo", "amarillo"],
-        "Frio": ["verde azulado", "azul marino", "azul", "cian", "lila", "rosa pastel", "plata", "vino"],
-        "Neutro": ["negro", "gris", "arena", "blanco"]
-    }
-    
-
 def verificar_prenda_usuario (nombre, prenda_sup, prenda_inf, color_subtono):
-    color_ideal= colores_para_el_usuario[color_subtono]
-    para_neutro= color_ideal + colores_para_el_usuario['Neutro']
+    color_ideal = COLORES_POR_SUBTONO.get(color_subtono, [])
+    para_neutro = color_ideal + COLORES_POR_SUBTONO['Neutro']
+    
     if prenda_sup in color_ideal and prenda_inf in color_ideal:
-        opinion_prendas= f"¡Uff, {nombre}! Qué nivel. Esa combinación resalta tu tono de piel al 100%. Te veras increible."
+        opinion_prendas= f"¡Uff, {nombre}! Qué nivel. Esa combinación resalta tu tono de piel al 100%. Te verás increíble."
 
     elif combinaciones_mixtas(prenda_sup, prenda_inf):
-        opinion_prendas= f"Oye {nombre} de verdad que me encanta esta combinacion de colores. Admiro mucho tu estilo propio"
+        opinion_prendas= f"Oye {nombre}, de verdad que me encanta esta combinación de colores. Admiro mucho tu estilo propio."
 
     elif prenda_sup in para_neutro or prenda_inf in para_neutro:
         opinion_prendas= f"Que buena eleccion {nombre} los colores neutros quedan muy bien con tu subtono de piel {color_subtono}"

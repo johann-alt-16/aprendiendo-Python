@@ -21,12 +21,20 @@ def perfil(eleccion):
 #Encendiendo el motor
 Contador_de_usos=0
 
-while True:
-   eleccion= int(input("Que nivel te gustaria llevar hoy?:  "))
-   if eleccion==0:
-      print(f"Hoy has usado la app {Contador_de_usos} veces")
-      break
-   perfil(eleccion)
-   Contador_de_usos +=1
+try:
+    while True:
+        entrada = input("¿Qué nivel te gustaría llevar hoy? (1, 2, 3 o 0 para salir): ")
+        if not entrada.isdigit():
+            print("Por favor, introduce un número válido.")
+            continue
+        
+        eleccion = int(entrada)
+        if eleccion == 0:
+            print(f"Hoy has usado la app {Contador_de_usos} veces.")
+            break
+        perfil(eleccion)
+        Contador_de_usos += 1
+except KeyboardInterrupt:
+    print("\nPrograma finalizado por el usuario.")
 
 print("Gracias por usar nuestra app ¡Vuelve pronto!")
